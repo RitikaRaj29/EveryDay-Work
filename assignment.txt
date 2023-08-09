@@ -1,0 +1,129 @@
+1. Check whether the strings are reversible of each other or not
+
+Console.WriteLine("Enter the First String");
+string s1=Console.ReadLine();
+
+Console.WriteLine("Enter the Second string");
+string s2=Console.ReadLine();
+
+ 
+if(s1.Length() != s2.Length)
+{
+Console.WriteLine("The strings are not reversible of each other since the length is not same");
+}
+
+for(int i=0;i<s1.Length;i++){
+    for(int j=s2.length;j>0;j--){
+        if(s1[i]!=s2[j])
+            {
+                Console.WriteLine("The String are not reversible ");
+                return;
+            }
+        else
+        Console.WriteLine("The string are Reversible");    
+
+ 
+
+ 
+
+
+2. Find the smallest sum of consecutive numbers in a given array
+
+Console.WriteLine("Enter the size of the array");
+int size=Console.ReadLine();
+
+int[] arr= new int[size];
+Console.WriteLine("Enter the elemnets of the array");
+for(int i=0;i<size;i++)
+{
+    arr[i]=int.Parse(Console.ReadLine());
+}
+
+int min_sum=int.MaxValue;
+for(int j=0;j<size;j++)
+{
+    int sum=0;
+    for(int k=0;k<size;k++)
+    {
+        sum+=arr[k];
+        if(sum<min_sum){
+            min_sum=sum;
+        }
+    }
+}
+
+Console.WriteLine("The Smallest sum of the consecutive numbers in the array is :"+min_sum);
+
+
+
+3.Find the power without math.pow function
+
+
+Console.WriteLine("Enter the Base value");
+int b= int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter the Power value");
+int p= int.Parse(Console.ReadLine());
+double res=1;
+for(int i=1;i<p;i++)
+    {
+        res*=b;
+    }
+Console.WriteLine(b+" raised to the power of "+p+ "is "+ res);
+
+
+
+4.Find the negative Power without using math.pow function.
+
+Console.WriteLine("Enter the Base value");
+int b= int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter the Power value");
+int p= int.Parse(Console.ReadLine());
+double res=1;
+for(int i=1;i<Math.Abs(p);i++)
+    {
+        res*=b;
+    }
+    if(res<0)
+    {
+        res=1;
+    }
+Console.WriteLine(b+" raised to the power of "+p+ "is "+ res);
+
+ 
+
+
+5. Reverse a string without recurssion.
+
+Console.WriteLine("Enter a string");
+string s=Console.ReadLine();
+
+string rev="";
+for(int i=0;i<s.Length-1;i++)
+{
+    rev+=s[i];
+}
+Console.WriteLine("The reversed string is "+rev);
+
+ 
+
+
+4.Find the negative Power without using math.pow function.
+
+Console.WriteLine("Enter the Base value");
+int b= int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter the Power value");
+int p= int.Parse(Console.ReadLine());
+double res=1;
+
+for(int i=1;i<Math.Abs(p);i++)
+    {
+        res*=b;
+    }
+    if(res<0)
+    {
+        res=1;
+    }
+Console.WriteLine(b+" raised to the power of "+p+ "is "+ res);
