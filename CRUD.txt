@@ -1,0 +1,71 @@
+CRUD in Stored Procedure 
+
+
+CREATE TABLE [dbo].[EmployeeInfo]
+[EmployeeID]
+[FirstName]
+[LastName]
+[Email]
+[PhoneNumber]
+
+
+CREATE PROCEDURE EmployeeData
+@EmployeeID int,
+@FirstName varchar(20),
+@LastName varchar(20),
+@Email varchar(20),
+@PhoneNumber int
+
+AS 
+BEGIN
+INSERT INTO EmployeeData (FirstName, LastName, Email, PhoneNumber)
+VALUES
+('Rahul' , 'Singh', 'rahul@gmail.com', '9876543256')
+
+
+READ
+CREATEPROC emp_Read
+@EmployeeID int
+AS
+BEGIN
+SELECT EmployeeID, FirstName, LastName, Email, PhoneNumber
+FROM  EmployeeInfo
+WHERE (EmployeeID = @EmployeeID)
+END 
+GO
+
+
+UPDATE
+CREATEPROC emp_Update
+@EmployeeID int,
+@FirstName varchar(20),
+@LastName varchar(20),
+@Email varchar(20),
+@PhoneNumber int
+AS
+BEGIN
+UPDATE EmployeeInfo
+SET FirstName = @FirstName,
+    LastName = @LastName,
+    Email = @Email,
+    PhoneNumber = @PhoneNumber
+WHERE (EmployeeID = @EmployeeID)
+END
+GO
+
+
+DELETE
+CREATEPROC emp_Delete
+@EmployeeID int
+AS
+BEGIN
+DELETE FROM EmployeeInfo
+WHERE (EmployeeID = @EmployeeID)
+END 
+GO
+
+
+
+
+
+
